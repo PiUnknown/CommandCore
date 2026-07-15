@@ -1,0 +1,17 @@
+:root {
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --border: #334155;
+  --muted: #64748b;
+  --accent: #8b5cf6;
+  --success: #22c55e;
+  --warning: #eab308;
+  --error: #ef4444;
+  --radius: 0.5rem;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
