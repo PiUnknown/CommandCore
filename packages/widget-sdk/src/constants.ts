@@ -1,0 +1,5 @@
+export const DEFAULT_WIDGET_REFRESH_INTERVAL = 60_000;
+
+export const DEFAULT_WIDGET_BORDER_RADIUS = "1rem";
+
+export const DEFAULT_WIDGET_PADDING = "1rem";
