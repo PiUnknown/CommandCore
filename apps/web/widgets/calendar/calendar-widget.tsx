@@ -1,5 +1,7 @@
 "use client";
 
+import { CalendarDays } from "lucide-react";
+
 import { useCalendar } from "./use-calendar";
 
 export function CalendarWidget() {
@@ -7,27 +9,55 @@ export function CalendarWidget() {
 
   if (loading) {
     return (
-      <p className="text-zinc-500">
-        Loading calendar...
-      </p>
+      <div className="flex h-full items-center justify-center">
+        <p className="text-sm text-zinc-500">
+          Loading today's schedule...
+        </p>
+      </div>
+    );
+  }
+
+  if (events.length === 0) {
+    return (
+      <div className="flex h-full flex-col items-center justify-center gap-3 text-center">
+        <CalendarDays
+          size={34}
+          className="text-zinc-600"
+        />
+
+        <p className="text-sm text-zinc-500">
+          No events scheduled today.
+        </p>
+      </div>
     );
   }
 
   return (
     <div className="space-y-3">
       {events.map((event) => (
-        <div
+        <article
           key={event.id}
-          className="rounded-xl border border-zinc-800 p-3"
+          className="rounded-xl border border-zinc-800 bg-zinc-900 p-4"
         >
-          <p className="font-medium">
-            {event.title}
-          </p>
+          <div className="flex items-center justify-between">
+            <h3 className="font-medium">
+              {event.title}
+            </h3>
 
-          <p className="mt-1 text-sm text-zinc-500">
-            {event.start.toLocaleTimeString()}
-          </p>
-        </div>
+            <span className="text-xs text-zinc-500">
+              {event.start.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </span>
+          </div>
+
+          {event.location && (
+            <p className="mt-2 text-sm text-zinc-400">
+              📍 {event.location}
+            </p>
+          )}
+        </article>
       ))}
     </div>
   );
