@@ -1,6 +1,9 @@
-import { registerWidget } from '@commandcore/widget-sdk';
-import { aiManifest } from './ai';
+import type { WidgetDefinition } from "@commandcore/widget-sdk";
 
-export function registerAllWidgets() {
-  registerWidget(aiManifest);
-}
+import { aiWidget } from "./ai";
+import { mailWidget } from "./mail";
+
+export const widgetRegistry: WidgetDefinition[] = [
+  aiWidget,
+  mailWidget,
+];
