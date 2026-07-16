@@ -1,0 +1,7 @@
+{
+  "extends": "@commandcore/tsconfig/base",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  },
+  "include": ["src"]
+}
