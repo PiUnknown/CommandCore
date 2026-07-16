@@ -1,5 +1,5 @@
+import { WidgetShell } from "@commandcore/ui";
 import type { WidgetDefinition } from "@commandcore/widget-sdk";
-import { WidgetShell } from "./widget-shell";
 
 interface WidgetRendererProps {
   widget: WidgetDefinition;
@@ -15,7 +15,7 @@ export function WidgetRenderer({
       title={widget.title}
       className={widget.gridClassName}
     >
-      <Component />
+      <Component expanded={false} />
     </WidgetShell>
   );
 }
