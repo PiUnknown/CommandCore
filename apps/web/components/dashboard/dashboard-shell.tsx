@@ -8,7 +8,9 @@ export function DashboardShell() {
             <AppHeader />
 
             <div className="flex-1 overflow-hidden">
+
                 <DashboardGrid />
+
             </div>
 
         </div>

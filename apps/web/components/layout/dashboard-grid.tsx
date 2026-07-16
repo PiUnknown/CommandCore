@@ -15,12 +15,12 @@ export function DashboardGrid() {
             />
 
             <WidgetShell
-                title="Calendar"
+                title="Calendar Timeline"
                 className="col-span-3 row-span-3"
             />
 
             <WidgetShell
-                title="Spotify"
+                title="Spotify Player"
                 className="col-span-3 row-span-2"
             />
 

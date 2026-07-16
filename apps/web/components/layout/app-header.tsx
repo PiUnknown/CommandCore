@@ -1,10 +1,11 @@
-import { Bell, Settings } from "lucide-react";
+import { Bell, Search, Settings } from "lucide-react";
 
 export function AppHeader() {
     return (
-        <header className="flex h-16 items-center justify-between border-b border-zinc-800 px-8">
+        <header className="flex h-16 items-center justify-between border-b border-zinc-800 bg-zinc-950 px-8">
 
             <div>
+
                 <h1 className="text-2xl font-bold">
                     CommandCore
                 </h1>
@@ -12,18 +13,24 @@ export function AppHeader() {
                 <p className="text-sm text-zinc-500">
                     Your Personal Command Center
                 </p>
+
             </div>
 
             <div className="flex items-center gap-6">
 
+                <Search
+                    size={18}
+                    className="cursor-pointer text-zinc-400 hover:text-white"
+                />
+
                 <Bell
-                    size={20}
-                    className="cursor-pointer text-zinc-400 transition hover:text-white"
+                    size={18}
+                    className="cursor-pointer text-zinc-400 hover:text-white"
                 />
 
                 <Settings
-                    size={20}
-                    className="cursor-pointer text-zinc-400 transition hover:text-white"
+                    size={18}
+                    className="cursor-pointer text-zinc-400 hover:text-white"
                 />
 
                 <div className="flex items-center gap-3">
@@ -31,13 +38,15 @@ export function AppHeader() {
                     <div className="h-10 w-10 rounded-full bg-zinc-700" />
 
                     <div>
+
                         <p className="font-medium">
                             Om
                         </p>
 
                         <p className="text-xs text-zinc-500">
-                            Engineering Student
+                            Personal Workspace
                         </p>
+
                     </div>
 
                 </div>

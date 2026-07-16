@@ -15,24 +15,45 @@ export function WidgetShell({
     return (
         <section
             className={cn(
-                "rounded-xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm overflow-hidden",
+                "flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/70 shadow-lg backdrop-blur",
                 className
             )}
         >
             <header className="flex items-center justify-between border-b border-zinc-800 px-4 py-3">
+
                 <h2 className="text-sm font-semibold tracking-wide text-zinc-100">
                     {title}
                 </h2>
 
-                <div className="flex gap-2">
-                    <button className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
-                    <button className="h-2.5 w-2.5 rounded-full bg-green-400" />
-                    <button className="h-2.5 w-2.5 rounded-full bg-red-400" />
+                <div className="flex items-center gap-2">
+
+                    <button
+                        className="h-3 w-3 rounded-full bg-yellow-400 transition hover:scale-110"
+                        aria-label="Minimize Widget"
+                    />
+
+                    <button
+                        className="h-3 w-3 rounded-full bg-green-400 transition hover:scale-110"
+                        aria-label="Expand Widget"
+                    />
+
+                    <button
+                        className="h-3 w-3 rounded-full bg-red-500 transition hover:scale-110"
+                        aria-label="Hide Widget"
+                    />
+
                 </div>
+
             </header>
 
-            <div className="h-[calc(100%-49px)] p-4">
-                {children}
+            <div className="flex flex-1 items-center justify-center p-6">
+
+                {children ?? (
+                    <p className="text-sm text-zinc-500">
+                        Coming Soon
+                    </p>
+                )}
+
             </div>
         </section>
     );
